@@ -1,5 +1,7 @@
+import 'package:blog_app/ui/pages/blog_home.dart';
 import 'package:blog_app/ui/pages/registration.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color(0xFFFF691C),
-      ),
-      home: RegistrationScreen(),
+          primaryColor: Color(0xFFFF691C),
+          fontFamily: GoogleFonts.inter().fontFamily),
+      home: BlogHomeScreen(),
     );
   }
 }
