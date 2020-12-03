@@ -1,3 +1,4 @@
+import 'package:blog_app/ui/customs/widgets/blog_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/svg.dart';
@@ -114,104 +115,41 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
               ),
             ),
             //
-            SizedBox(height: 15),
-            Container(
-              // color: Colors.pink,
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(25),
-                    child: Container(
-                      height: 80,
-                      width: 80,
-                      // decoration: BoxDecoration(),
-                      // color: Colors.black,
-                      child:
-                          Image.asset('assets/design.jpg', fit: BoxFit.cover),
-                    ),
-                  ),
-                  SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xff503e9d),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              padding: EdgeInsets.all(4),
-                              child: Text(
-                                'DESIGN',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Top 10 Techniques to get rid of clustters in design system',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w900),
-                        ),
-                        SizedBox(height: 15),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Icon(
-                                    Feather.clock,
-                                    size: 16,
-                                    color: Color(0xff9fa0a9),
-                                  ),
-                                  SizedBox(width: 9),
-                                  Text(
-                                    '50m ago',
-                                    style: TextStyle(
-                                        color: Color(0xff9fa0a9), fontSize: 15),
-                                  )
-                                ],
-                              ),
-                            ),
-                            SizedBox(width: 15),
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Icon(
-                                    Feather.message_circle,
-                                    size: 16,
-                                    color: Color(0xff9fa0a9),
-                                  ),
-                                  SizedBox(width: 9),
-                                  Text(
-                                    '68 comments',
-                                    style: TextStyle(
-                                        color: Color(0xff9fa0a9), fontSize: 15),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
+            SizedBox(height: 20),
+            //
+            CustomBlogWidget(
+              title:
+                  'Top 10 Techniques to get rid of clustters in design system',
+              imagePath: 'assets/design.jpg',
+              comments: 68,
+              postedWhen: 20,
+              categoryTag: CategoryTag.design,
+            ),
+            SizedBox(height: 10),
+            CustomBlogWidget(
+              title: 'Make an eye catchy visual in photoshop with brushes',
+              imagePath: 'assets/mashup.jpg',
+              comments: 15,
+              postedWhen: 5,
+              categoryTag: CategoryTag.art,
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        // color: Colors.pink,
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                  icon: Icon(Icons.home_outlined, size: 25), onPressed: () {}),
+              IconButton(icon: Icon(Icons.search, size: 25), onPressed: () {}),
+              IconButton(
+                  icon: Icon(Icons.favorite_border, size: 25), onPressed: () {})
+            ],
+          ),
         ),
       ),
     );
