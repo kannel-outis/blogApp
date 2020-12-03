@@ -1,4 +1,5 @@
 import 'package:blog_app/ui/customs/widgets/blog_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -25,7 +26,7 @@ class BlogStoryPage extends StatelessWidget {
             color: Color(0xff503e9d),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'DESIGN',
             style: TextStyle(
@@ -42,7 +43,7 @@ class BlogStoryPage extends StatelessWidget {
             color: Color(0xfffbd460),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'ART',
             style: TextStyle(
@@ -59,7 +60,7 @@ class BlogStoryPage extends StatelessWidget {
             color: Color(0xffff6a1e),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'BUSINESS',
             style: TextStyle(
@@ -77,11 +78,20 @@ class BlogStoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(CupertinoIcons.back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(top: 60, left: 20, right: 20),
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: ListView(
             children: [
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -112,7 +122,8 @@ class BlogStoryPage extends StatelessWidget {
               Container(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+                  style: TextStyle(
+                      fontSize: 22, fontWeight: FontWeight.w900, height: 1.5),
                 ),
               ),
               SizedBox(height: 30),
@@ -133,7 +144,7 @@ class BlogStoryPage extends StatelessWidget {
                       '''Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi morbi tempus iaculis. Eu volutpat odio facilisis mauris sit amet massa vitae. Arcu odio ut sem nulla pharetra diam sit amet nisl. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Purus sit amet volutpat consequat mauris nunc congue nisi. Egestas erat imperdiet sed euismod nisi porta. Ultricies tristique nulla aliquet enim tortor at. Mattis rhoncus urna neque viverra justo nec ultrices dui. Sed libero enim sed faucibus. Et leo duis ut diam quam nulla porttitor. Maecenas accumsan lacus vel facilisis volutpat est. At augue eget arcu dictum varius duis at consectetur.
 
 Etiam erat velit scelerisque in. At erat pellentesque adipiscing commodo elit at imperdiet. Vitae congue eu consequat ac. Consectetur lorem donec massa sapien faucibus. Facilisi morbi tempus iaculis urna id volutpat lacus. Nisi est sit amet facilisis magna etiam tempor. Nisl vel pretium lectus quam id leo in vitae turpis. Accumsan tortor posuere ac ut consequat. Ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Sodales ut etiam sit amet nisl. Habitant morbi tristique senectus et netus et. Turpis in eu mi bibendum neque egestas congue quisque.''',
-                      style: TextStyle(fontSize: 18)),
+                      style: TextStyle(fontSize: 18, height: 2)),
                 ),
               )
             ],

@@ -32,67 +32,74 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
             ),
             SizedBox(height: 40),
             Container(
-              height: 170,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xFFccdfec),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: FittedBox(
-                alignment: Alignment.topCenter,
-                fit: BoxFit.fitWidth,
-                child: SvgPicture.asset('assets/dev_productivity.svg'),
-              ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              child: Text(
-                'How to run a more Effective meeting',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-              ),
-            ),
-            SizedBox(height: 15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
+                children: [
+                  Container(
+                    height: 170,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFccdfec),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: FittedBox(
+                      alignment: Alignment.topCenter,
+                      fit: BoxFit.fitWidth,
+                      child: SvgPicture.asset('assets/dev_productivity.svg'),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    child: Text(
+                      'How to run a more Effective meeting',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Icon(
-                        Feather.clock,
-                        size: 16,
-                        color: Color(0xff9fa0a9),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Feather.clock,
+                              size: 16,
+                              color: Color(0xff9fa0a9),
+                            ),
+                            SizedBox(width: 9),
+                            Text(
+                              '50m ago',
+                              style: TextStyle(
+                                  color: Color(0xff9fa0a9), fontSize: 15),
+                            )
+                          ],
+                        ),
                       ),
-                      SizedBox(width: 9),
-                      Text(
-                        '50m ago',
-                        style:
-                            TextStyle(color: Color(0xff9fa0a9), fontSize: 15),
+                      SizedBox(width: 15),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(
+                              Feather.message_circle,
+                              size: 16,
+                              color: Color(0xff9fa0a9),
+                            ),
+                            SizedBox(width: 9),
+                            Text(
+                              '68 comments',
+                              style: TextStyle(
+                                  color: Color(0xff9fa0a9), fontSize: 15),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
-                ),
-                SizedBox(width: 15),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Feather.message_circle,
-                        size: 16,
-                        color: Color(0xff9fa0a9),
-                      ),
-                      SizedBox(width: 9),
-                      Text(
-                        '68 comments',
-                        style:
-                            TextStyle(color: Color(0xff9fa0a9), fontSize: 15),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 30),
             Container(
