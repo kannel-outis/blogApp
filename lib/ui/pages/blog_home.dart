@@ -125,7 +125,7 @@ class _BlogHomeScreenState extends State<BlogHomeScreen> {
               postedWhen: 20,
               categoryTag: CategoryTag.design,
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             CustomBlogWidget(
               title: 'Make an eye catchy visual in photoshop with brushes',
               imagePath: 'assets/mashup.jpg',
