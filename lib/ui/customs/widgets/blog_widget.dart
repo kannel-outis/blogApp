@@ -140,7 +140,7 @@ class CustomBlogWidget extends StatelessWidget {
                             Icon(
                               Feather.clock,
                               size: 16,
-                              color: Color(0xff9fa0a9),
+                              color: Color(0xff9fa0a9), 
                             ),
                             SizedBox(width: 9),
                             Text(
