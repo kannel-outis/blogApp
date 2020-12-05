@@ -16,7 +16,7 @@ class CustomTextFormfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
       margin: EdgeInsets.only(top: 15),
       decoration: BoxDecoration(
         color: Color(0xFFFF691C).withOpacity(0.05),
@@ -30,7 +30,7 @@ class CustomTextFormfield extends StatelessWidget {
           keyboardType: keyBoardInputtype,
           obscureText: obscure,
           cursorColor: Color(0xFFFF691C),
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 15),
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
             hintText: labelName,
