@@ -33,7 +33,7 @@ class CustomBlogWidget extends StatelessWidget {
             color: Color(0xff503e9d),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'DESIGN',
             style: TextStyle(
@@ -50,7 +50,7 @@ class CustomBlogWidget extends StatelessWidget {
             color: Color(0xfffbd460),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'ART',
             style: TextStyle(
@@ -67,7 +67,7 @@ class CustomBlogWidget extends StatelessWidget {
             color: Color(0xffff6a1e),
             borderRadius: BorderRadius.circular(8),
           ),
-          padding: EdgeInsets.all(4),
+          padding: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
           child: Text(
             'BUSINESS',
             style: TextStyle(
