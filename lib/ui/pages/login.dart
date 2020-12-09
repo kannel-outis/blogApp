@@ -1,7 +1,6 @@
 import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/text_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

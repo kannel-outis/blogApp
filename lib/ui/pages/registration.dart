@@ -1,31 +1,17 @@
 import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/text_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
-}
-
-class _RegistrationScreenState extends State<RegistrationScreen> {
-  TextEditingController _firstNameController;
-  TextEditingController _lastNameController;
-  TextEditingController _emailController;
-  TextEditingController _passwordController;
-  @override
-  void initState() {
-    super.initState();
-    _firstNameController = TextEditingController();
-    _lastNameController = TextEditingController();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-  }
-
+class RegistrationScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    var _firstNameController = useTextEditingController();
+    var _lastNameController = useTextEditingController();
+    var _emailController = useTextEditingController();
+    var _passwordController = useTextEditingController();
     return Scaffold(
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Stack(
             children: [
