@@ -1,5 +1,5 @@
-import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/widgets/blog_widget.dart';
+import 'package:blog_app/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/svg.dart';
@@ -72,8 +72,7 @@ class _HomeState extends State<Home> {
                             SizedBox(width: 9),
                             Text(
                               '50m ago',
-                              style: TextStyle(
-                                  color: color3, fontSize: 15),
+                              style: TextStyle(color: color3, fontSize: 15),
                             )
                           ],
                         ),
@@ -91,8 +90,7 @@ class _HomeState extends State<Home> {
                             SizedBox(width: 9),
                             Text(
                               '68 comments',
-                              style: TextStyle(
-                                  color: color3, fontSize: 15),
+                              style: TextStyle(color: color3, fontSize: 15),
                             )
                           ],
                         ),

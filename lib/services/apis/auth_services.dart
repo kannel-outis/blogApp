@@ -21,52 +21,33 @@ class Auth implements AuthBase {
   @override
   Future<AuthModel> userRegistration(
       {String email, String name, String password}) async {
-    AuthModel _authModel;
+    print('start');
     Map<String, dynamic> body = {
       'email': email,
       'name': name,
       'password': password,
     };
     try {
-      _authModel =
-          await _dio.post(BASE_URL + 'auth/signup', data: body).then((value) {
-        if (value.statusCode == 200) {
-          return AuthModel.fromMap(value.data);
-        } else {
-          print(value.data['message']);
-
-          throw BError(value.data['message']);
-        }
-      });
-    } catch (e) {
-      print(e.toString());
-      throw BError(e.toString());
+      var value = await _dio.post(BASE_URL + 'auth/signup', data: body);
+      return AuthModel.fromMap(value.data);
+    } on DioError catch (e) {
+      print(e.response.data);
+      throw BError(e.response.data['message']);
     }
-    return _authModel;
   }
 
   @override
   Future<AuthModel> userLogin({String email, String password}) async {
-    AuthModel _authModel;
     Map<String, dynamic> body = {
       'email': email,
       'password': password,
     };
     try {
-      _authModel =
-          await _dio.post(BASE_URL + 'auth/login', data: body).then((value) {
-        if (value.statusCode == 200) {
-          return AuthModel.fromMap(value.data);
-        } else {
-          print(value.data['message']);
-
-          throw BError(value.data['message']);
-        }
-      });
-    } catch (e) {
-      print(e.toString());
-      throw BError(e.toString());
+      var response = await _dio.post(BASE_URL + 'auth/login', data: body);
+      return AuthModel.fromMap(response.data);
+    } on DioError catch (e) {
+      print(e.response.data);
+      throw BError(e.response.data['message']);
     }
-    return _authModel;
   }
 }

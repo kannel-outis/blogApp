@@ -1,13 +1,15 @@
-import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/text_fields.dart';
 import 'package:blog_app/ui/view_model/auth_view_model.dart';
+import 'package:blog_app/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hooks_riverpod/all.dart';
 
 class RegistrationScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    final _auth = useProvider(authC);
     var _nameController = useTextEditingController();
     var _emailController = useTextEditingController();
     var _passwordController = useTextEditingController();
@@ -64,7 +66,7 @@ class RegistrationScreen extends HookWidget {
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30, right: 30, bottom: 50),
-                      height: (MediaQuery.of(context).size.height / 2) - 55,
+                      height: (MediaQuery.of(context).size.height / 2) - 57,
                       child: Form(
                         child: Column(
                           children: [
@@ -88,11 +90,18 @@ class RegistrationScreen extends HookWidget {
                               borderRadius: BorderRadius.circular(5),
                               child: FlatButton(
                                 onPressed: () {
-                                  context.read(authC).userRegistration(
-                                        email: _emailController.text,
-                                        name: _nameController.text,
-                                        password: _passwordController.text,
-                                      );
+                                  _auth
+                                      .userRegistration(
+                                    email: _emailController.text,
+                                    name: _nameController.text,
+                                    password: _passwordController.text,
+                                  )
+                                      .then((value) {
+                                    if (value == null) {
+                                      Fluttertoast.showToast(
+                                          msg: _auth.bError.message);
+                                    }
+                                  });
                                 },
                                 height: 50,
                                 textColor: Colors.white,

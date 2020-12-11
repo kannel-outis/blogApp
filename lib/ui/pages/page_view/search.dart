@@ -1,5 +1,5 @@
-import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/text_fields.dart';
+import 'package:blog_app/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class Search extends StatefulWidget {

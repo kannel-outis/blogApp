@@ -1,5 +1,5 @@
-import 'package:blog_app/constants/color.dart';
 import 'package:blog_app/ui/customs/widgets/blog_widget.dart';
+import 'package:blog_app/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class Favorite extends StatefulWidget {
