@@ -1,5 +1,6 @@
 import 'package:blog_app/ui/customs/text_fields.dart';
-import 'package:blog_app/ui/view_model/auth_view_model.dart';
+import 'package:blog_app/ui/view_model/auth/auth_view_model.dart';
+import 'package:blog_app/ui/view_model/auth/isLoading.dart';
 import 'package:blog_app/utils/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -107,10 +108,14 @@ class RegistrationScreen extends HookWidget {
                                 textColor: Colors.white,
                                 color: Color(0xFFFF691C),
                                 child: Center(
-                                  child: Text(
-                                    "Register",
-                                    style: TextStyle(fontSize: 20),
-                                  ),
+                                  child: Consumer(builder: (context, watch, _) {
+                                    bool _isLoading =
+                                        watch(isLoadingB).isLoading;
+                                    return Text(
+                                      _isLoading ? "Loading..." : "Register",
+                                      style: TextStyle(fontSize: 20),
+                                    );
+                                  }),
                                 ),
                               ),
                             )
