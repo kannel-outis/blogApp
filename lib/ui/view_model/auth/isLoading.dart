@@ -1,17 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/all.dart';
 
-final isLoadingB = ChangeNotifierProvider<LoadingB>((_) {
-  return LoadingB();
+final isLoadingB = StateNotifierProvider<LoadingB>((_) {
+  return LoadingB(false);
 });
 
-class LoadingB extends ChangeNotifier {
-  bool _isLoading = false;
+class LoadingB extends StateNotifier<bool> {
+  LoadingB(bool state) : super(state);
 
   setLoading(bool loading) {
-    _isLoading = loading;
-    notifyListeners();
+    state = loading;
   }
-
-  bool get isLoading => _isLoading;
 }

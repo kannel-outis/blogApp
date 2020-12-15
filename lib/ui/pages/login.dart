@@ -103,8 +103,7 @@ class LoginScreen extends HookWidget {
                                 color: Color(0xFFFF691C),
                                 child: Center(
                                   child: Consumer(builder: (context, watch, _) {
-                                    bool _isLoading =
-                                        watch(isLoadingB).isLoading;
+                                    bool _isLoading = watch(isLoadingB.state);
                                     return _isLoading
                                         ? Text(
                                             'Loading...',

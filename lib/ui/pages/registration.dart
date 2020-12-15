@@ -109,8 +109,7 @@ class RegistrationScreen extends HookWidget {
                                 color: Color(0xFFFF691C),
                                 child: Center(
                                   child: Consumer(builder: (context, watch, _) {
-                                    bool _isLoading =
-                                        watch(isLoadingB).isLoading;
+                                    bool _isLoading = watch(isLoadingB.state);
                                     return Text(
                                       _isLoading ? "Loading..." : "Register",
                                       style: TextStyle(fontSize: 20),
